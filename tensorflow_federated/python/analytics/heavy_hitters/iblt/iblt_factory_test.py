@@ -89,7 +89,7 @@ class IbltFactoryTest(tf.test.TestCase, parameterized.TestCase):
 
   def setUp(self):
     super().setUp()
-    execution_contexts.set_test_python_execution_context()
+    execution_contexts.set_sync_test_cpp_execution_context()
 
   def test_capacity_validation(self):
     with self.assertRaisesRegex(ValueError, 'capacity'):

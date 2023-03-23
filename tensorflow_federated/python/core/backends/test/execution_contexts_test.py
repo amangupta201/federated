@@ -30,7 +30,7 @@ class SecureModularSumTest(parameterized.TestCase, tf.test.TestCase):
 
   def setUp(self):
     super().setUp()
-    execution_contexts.set_test_python_execution_context()
+    execution_contexts.set_sync_test_cpp_execution_context()
 
   @parameterized.named_parameters(
       ('one_client_not_divisible', [1], 1, _CLIENTS_INT),
@@ -101,7 +101,7 @@ class SecureSumBitwidthTest(tf.test.TestCase, parameterized.TestCase):
 
   def setUp(self):
     super().setUp()
-    execution_contexts.set_test_python_execution_context()
+    execution_contexts.set_sync_test_cpp_execution_context()
 
   @parameterized.named_parameters(
       ('one_client', [1]),
@@ -162,7 +162,7 @@ class SecureSumMaxValueTest(tf.test.TestCase, parameterized.TestCase):
 
   def setUp(self):
     super().setUp()
-    execution_contexts.set_test_python_execution_context()
+    execution_contexts.set_sync_test_cpp_execution_context()
 
   def test_raises_with_arguments_over_max_value(self):
     max_value = 1
